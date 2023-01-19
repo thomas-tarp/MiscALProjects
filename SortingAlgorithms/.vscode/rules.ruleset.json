@@ -8,7 +8,7 @@
             "justification": "Naming rules are applied by using 'waldo's CRS AL Language Extension'."
         },
         {
-            "id": "AS0084",
+            "id": "AS0015",
             "action": "None",
             "justification": "Not an AppSource app"
         },
@@ -18,7 +18,12 @@
             "justification": "Not an AppSource app"
         },
         {
-            "id": "AS0015",
+            "id": "AS0054",
+            "action": "None",
+            "justification": "Not an AppSource app"
+        },
+        {
+            "id": "AS0084",
             "action": "None",
             "justification": "Not an AppSource app"
         },
