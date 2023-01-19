@@ -1,0 +1,33 @@
+{
+  "id": "eac3a484-589d-4521-bdcf-fb341c882381",
+  "name": "SortingAlgorithms",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "Experiments with sorting algorithms",
+  "description": "Experiments with sorting algorithms for lists of integers",
+  "privacyStatement": "https://github.com/thomas-tarp/MiscALProjects",
+  "EULA": "https://github.com/thomas-tarp/MiscALProjects",
+  "help": "https://github.com/thomas-tarp/MiscALProjects",
+  "url": "https://github.com/thomas-tarp/MiscALProjects",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "21.0.0.0",
+  "idRanges": [
+    {
+      "from": 50100,
+      "to": 50149
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "10.0",
+  "features": [
+    "NoImplicitWith",
+    "NoPromotedActionProperties"
+  ]
+}

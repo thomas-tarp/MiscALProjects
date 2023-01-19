@@ -1,0 +1,33 @@
+{
+	"folders": [
+		{
+			"path": "SortingAlgorithms"
+		}
+	],
+	"settings": {
+			"git.confirmSync": false,
+			"files.autoSave": "onFocusChange",
+			"al.enableCodeAnalysis": true,
+			"al.codeAnalyzers": [
+				"${CodeCop}",
+				"${UICop}",
+				"${PerTenantExtensionCop}",
+				"${AppSourceCop}"
+			],
+			"al.ruleSetPath": ".vscode\\rules.ruleset.json",
+			"CRS.AlSubFolderName": "None",
+			"CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+			"CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+			"CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
+			"CRS.OnSaveAlFileAction": "Rename",
+			"CRS.RenameWithGit": false,
+			"CRS.ExtensionObjectNamePattern": null
+	},
+	"extensions": {
+		"recommendations": [
+			"waldo.crs-al-language-extension",
+			"ms-dynamics-smb.al",
+			"vjeko.vjeko-al-objid"
+		]
+	}
+}

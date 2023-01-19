@@ -1,0 +1,31 @@
+{
+    "name": "Default Ruleset",
+    "description": "General ruleset for the miscellaneous projects",
+    "rules": [
+        {
+            "id": "AA0215",
+            "action": "Error",
+            "justification": "Naming rules are applied by using 'waldo's CRS AL Language Extension'."
+        },
+        {
+            "id": "AS0084",
+            "action": "None",
+            "justification": "Not an AppSource app"
+        },
+        {
+            "id": "AS0051",
+            "action": "None",
+            "justification": "Not an AppSource app"
+        },
+        {
+            "id": "AS0015",
+            "action": "None",
+            "justification": "Not an AppSource app"
+        },
+        {
+            "id": "AS0092",
+            "action": "None",
+            "justification": "Not an AppSource app"
+        }
+    ]
+}
