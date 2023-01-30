@@ -1,0 +1,33 @@
+{
+  "id": "2d89ced4-f913-4c29-bef5-c556f5a9e6b9",
+  "name": "TransferFieldsWithValidateFieldName",
+  "publisher": "Default publisher",
+  "version": "1.0.0.0",
+  "brief": "",
+  "description": "",
+  "privacyStatement": "https://github.com/thomas-tarp/MiscALProjects",
+  "EULA": "https://github.com/thomas-tarp/MiscALProjects",
+  "help": "https://github.com/thomas-tarp/MiscALProjects",
+  "url": "https://github.com/thomas-tarp/MiscALProjects",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "1.0.0.0",
+  "application": "21.0.0.0",
+  "idRanges": [
+    {
+      "from": 50150,
+      "to": 50199
+    }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "10.0",
+  "features": [
+    "NoImplicitWith",
+    "NoPromotedActionProperties"
+  ]
+}
