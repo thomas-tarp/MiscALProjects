@@ -1,10 +1,10 @@
 {
-  "id": "2d89ced4-f913-4c29-bef5-c556f5a9e6b9",
-  "name": "TransferFieldsWithValidateFieldName",
+  "id": "a49f09b8-981d-4cd6-9880-de75d7ef43f6",
+  "name": "EmbeddedMap",
   "publisher": "Thomas Tarp",
   "version": "1.0.0.0",
-  "brief": "TransferFieldsWithValidate based on field name",
-  "description": "Examples of TransferFields with validation based on field name",
+  "brief": "Maps embedded directly into Business Central",
+  "description": "Provides examples of embedding maps directly into the Business Central UI",
   "privacyStatement": "https://github.com/thomas-tarp/MiscALProjects",
   "EULA": "https://github.com/thomas-tarp/MiscALProjects",
   "help": "https://github.com/thomas-tarp/MiscALProjects",
@@ -16,8 +16,8 @@
   "application": "21.0.0.0",
   "idRanges": [
     {
-      "from": 50150,
-      "to": 50199
+      "from": 50200,
+      "to": 50249
     }
   ],
   "resourceExposurePolicy": {

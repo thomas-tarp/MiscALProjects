@@ -1,7 +1,7 @@
 {
   "id": "eac3a484-589d-4521-bdcf-fb341c882381",
   "name": "SortingAlgorithms",
-  "publisher": "Default publisher",
+  "publisher": "Thomas Tarp",
   "version": "1.0.0.0",
   "brief": "Experiments with sorting algorithms",
   "description": "Experiments with sorting algorithms for lists of integers",
