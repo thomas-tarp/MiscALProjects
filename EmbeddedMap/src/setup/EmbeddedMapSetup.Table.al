@@ -10,7 +10,7 @@ table 50200 "EmbeddedMapSetup"
             Caption = 'PK';
             DataClassification = SystemMetadata;
         }
-        field(2; "Zoom"; Integer)
+        field(2; "Zoom"; Enum EmbeddedMapZoomLevel)
         {
             Caption = 'Zoom';
             DataClassification = CustomerContent;
@@ -26,6 +26,11 @@ table 50200 "EmbeddedMapSetup"
             Caption = 'MapTilerKey';
             DataClassification = CustomerContent;
             Description = 'Should be saved in a secure place for production systems';
+        }
+        field(5; "EmbeddedMapProvider"; Enum EmbeddedMapProvider)
+        {
+            Caption = 'EmbeddedMapProvider';
+            DataClassification = CustomerContent;
         }
     }
 

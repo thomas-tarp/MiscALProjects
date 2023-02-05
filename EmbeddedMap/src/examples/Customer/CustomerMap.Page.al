@@ -13,8 +13,9 @@ page 50200 "Customer Map"
 
                 trigger OnControlReady()
                 begin
-                    CurrPage.MapCtrl.init();
                     EmbeddedMapSetup.Initialize();
+                    EmbeddedMap := EmbeddedMapSetup.EmbeddedMapProvider;
+                    CurrPage.MapCtrl.init();
                 end;
 
                 trigger OnAfterInit()
@@ -46,23 +47,37 @@ page 50200 "Customer Map"
             end;
     end;
 
+    local procedure Clear()
+    begin
+        CurrPage.MapCtrl.clear(); //Implementation detail (refactor)
+    end;
+
     local procedure EmbedMap()
     var
-        AdressAsJson: JsonObject;
+        OpenStreetMap: Codeunit OpenStreetMap; //Implementation detail (remove)
+        Address: JsonObject;
         SettingsAsJson: JsonObject;
     begin
-        CurrPage.MapCtrl.clear();
-        AdressAsJson.Add('address', Rec.Address);
-        AdressAsJson.Add('region', Rec.City);
-        AdressAsJson.Add('country', Rec."Country/Region Code");
+        Clear();
+        GenerateAddressJson(Address);
+
+        //Implementation details below (refactor)
         SettingsAsJson.Add('positionStackApiKey', EmbeddedMapSetup.PositionStackApiKey);
         SettingsAsJson.Add('mapTilerKey', EmbeddedMapSetup.MapTilerKey);
-        SettingsAsJson.Add('zoom', EmbeddedMapSetup.Zoom);
-        CurrPage.MapCtrl.embedMap(AdressAsJson, SettingsAsJson);
+        SettingsAsJson.Add('zoom', OpenStreetMap.GetZoomLevel(EmbeddedMapSetup.Zoom));
+        CurrPage.MapCtrl.embedMap(Address, SettingsAsJson);
+    end;
+
+    local procedure GenerateAddressJson(var Address: JsonObject)
+    begin
+        Address.Add('address', Rec.Address);
+        Address.Add('region', Rec.City);
+        Address.Add('country', Rec."Country/Region Code");
     end;
 
     var
         EmbeddedMapSetup: Record EmbeddedMapSetup;
         CurrCustomer: Record Customer;
+        EmbeddedMap: Interface EmbeddedMap;
         MapReady: Boolean;
 }

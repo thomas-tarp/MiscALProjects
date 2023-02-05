@@ -9,12 +9,12 @@ controladdin "MapAddin"
     VerticalShrink = true;
     HorizontalStretch = true;
     HorizontalShrink = true;
-    Scripts = 'src\scripts\Map.js',
+    Scripts = 'src\addin\scripts\map.js',
               'https://cdn.jsdelivr.net/npm/ol@v7.2.2/dist/ol.js';
-    StyleSheets = 'src\scripts\style.css',
+    StyleSheets = 'src\addin\styles\style.css',
                   'https://cdn.jsdelivr.net/npm/ol@v7.2.2/ol.css';
-    StartupScript = 'src\scripts\start.js';
-    RefreshScript = 'src\scripts\start.js';
+    StartupScript = 'src\addin\scripts\start.js';
+    RefreshScript = 'src\addin\scripts\start.js';
 
     event OnControlReady()
     event OnAfterInit()
