@@ -72,41 +72,94 @@ function addAddressDataToMap(addressData, settings_json) {
     zoom = 12;
   }
 
-  const map = new ol.Map({
-    target: 'map',
-    layers: [
-      new ol.layer.Tile({
-        source: new ol.source.TileJSON({
-          url: `https://api.maptiler.com/maps/streets-v2/tiles.json?key=${settings_json.mapTilerKey}`,
-          tileSize: 512,
-        })
-      })
-    ],
-    view: new ol.View({
-      center: ol.proj.fromLonLat([addressData.data[0].longitude, addressData.data[0].latitude]),
-      zoom: settings_json.zoom
-    })
-  });
+  const { name, administrative_area, country, coordinate } = parseAddressData();
+  const map = addMap();
+  addPin();
+  addPopup();
 
-  const marker = new ol.layer.Vector({
-    source: new ol.source.Vector({
-      features: [
-        new ol.Feature({
-          geometry: new ol.geom.Point(
-            ol.proj.fromLonLat([addressData.data[0].longitude, addressData.data[0].latitude])
-          )
+  function parseAddressData() {
+    const coordinate = ol.proj.fromLonLat([addressData.data[0].longitude, addressData.data[0].latitude]);
+    const name = addressData.data[0].name ? addressData.data[0].name : '';
+    const administrative_area = addressData.data[0].administrative_area ? addressData.data[0].administrative_area : '';
+    const country = addressData.data[0].country ? addressData.data[0].country : '';
+    return { name, administrative_area, country, coordinate };
+  }
+
+  function addMap() {
+    return new ol.Map({
+      target: 'map',
+      layers: [
+        new ol.layer.Tile({
+          source: new ol.source.TileJSON({
+            url: `https://api.maptiler.com/maps/streets-v2/tiles.json?key=${settings_json.mapTilerKey}`,
+            tileSize: 512,
+          })
         })
       ],
-    }),
-    style: new ol.style.Style({
-      image: new ol.style.Icon({
-        src: 'https://docs.maptiler.com/openlayers/default-marker/marker-icon.png',
-        anchor: [0.5, 1]
+      view: new ol.View({
+        center: coordinate,
+        zoom: settings_json.zoom
       })
-    })
-  });
+    });
+  }
 
-  map.addLayer(marker);
+  function addPin() {
+    const marker = new ol.layer.Vector({
+      source: new ol.source.Vector({
+        features: [
+          new ol.Feature({
+            geometry: new ol.geom.Point(coordinate)
+          })
+        ],
+      }),
+      style: new ol.style.Style({
+        image: new ol.style.Icon({
+          src: 'https://docs.maptiler.com/openlayers/default-marker/marker-icon.png',
+          anchor: [0.5, 1]
+        })
+      })
+    });
+
+    map.addLayer(marker);
+  }
+
+  function addPopup() {
+    const popup_container = document.createElement('div');
+    popup_container.id = 'popup';
+    popup_container.className = 'ol-popup';
+    document.getElementById('controlAddIn').appendChild(popup_container);
+
+    const popup_closer = document.createElement('a');
+    popup_closer.id = 'popup-closer';
+    popup_closer.href = '#';
+    popup_closer.className = 'ol-popup-closer';
+    document.getElementById('popup').appendChild(popup_closer);
+
+    const popup_content = document.createElement('div');
+    popup_content.id = 'popup-content';
+    popup_content.innerHTML = `<p class="bold">${name}</p><p class="de-highlight">${administrative_area}</p><p class="de-highlight">${country}</p>`;
+    document.getElementById('popup').appendChild(popup_content);
+
+    const popup = new ol.Overlay({
+      element: popup_container,
+      autoPan: {
+        animation: {
+          duration: 250,
+        },
+      },
+      position: coordinate
+    });
+
+    popup_closer.onclick = function () {
+      map.removeOverlay(popup);
+      popup_closer.blur();
+      return false;
+    };
+
+    map.on('singleclick', function (evt) {
+      map.addOverlay(popup);
+    });
+  }
 }
 
 function clear() {
