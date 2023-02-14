@@ -17,7 +17,7 @@ page 50250 "DateFormatter"
                 {
                     ApplicationArea = All;
                     Caption = 'Formatter';
-                    ToolTip = 'Defines the format to use for formatting the date';
+                    ToolTip = 'Defines the format to use for formatting the date.';
 
                     trigger OnValidate()
                     begin
@@ -46,13 +46,13 @@ page 50250 "DateFormatter"
                 {
                     ApplicationArea = All;
                     Caption = 'Date as Text';
-                    ToolTip = 'Shows the input date as text';
+                    ToolTip = 'Shows the input date as text.';
                 }
                 field(OutputDate; OutputDate)
                 {
                     ApplicationArea = All;
                     Caption = 'Result Date';
-                    ToolTip = 'Shows the date as text converted back to a date';
+                    ToolTip = 'Shows the date as text converted back to a date. If it cannot be converted, it will be blank.';
                 }
             }
         }
