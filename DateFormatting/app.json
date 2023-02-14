@@ -27,6 +27,7 @@
   },
   "runtime": "10.0",
   "features": [
-    "NoImplicitWith"
+    "NoImplicitWith",
+    "NoPromotedActionProperties"
   ]
 }
