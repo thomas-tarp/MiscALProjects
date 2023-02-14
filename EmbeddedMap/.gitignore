@@ -4,6 +4,7 @@
 # Files
 *.app
 *.g.xlf
+TODO.*
 
 # Exceptions
 !app.json
