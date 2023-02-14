@@ -1,10 +1,10 @@
 {
-  "id": "a49f09b8-981d-4cd6-9880-de75d7ef43f6",
-  "name": "Embedded Map",
+  "id": "eb4f9939-8eb9-460b-b729-d8d0f9e2e082",
+  "name": "Date Formatting",
   "publisher": "Thomas Tarp",
   "version": "1.0.0.0",
-  "brief": "Maps embedded directly into Business Central",
-  "description": "Provides examples of embedding maps directly into the Business Central UI",
+  "brief": "Experiments with date formatting",
+  "description": "Experiments with date formatting",
   "privacyStatement": "https://github.com/thomas-tarp/MiscALProjects",
   "EULA": "https://github.com/thomas-tarp/MiscALProjects",
   "help": "https://github.com/thomas-tarp/MiscALProjects",
@@ -16,8 +16,8 @@
   "application": "21.0.0.0",
   "idRanges": [
     {
-      "from": 50200,
-      "to": 50249
+      "from": 50250,
+      "to": 50299
     }
   ],
   "resourceExposurePolicy": {
@@ -27,7 +27,6 @@
   },
   "runtime": "10.0",
   "features": [
-    "NoImplicitWith",
-    "NoPromotedActionProperties"
+    "NoImplicitWith"
   ]
 }
