@@ -1,0 +1,10 @@
+# Folders
+.vscode/*
+
+# Files
+*.app
+*.g.xlf
+
+# Exceptions
+!app.json
+!.vscode/rules.ruleset.json
